@@ -1,0 +1,331 @@
+<html>
+<head>
+    <title>Crunchyroll</title>
+<style>
+
+body {
+    background-color: #edf6f9;
+    font-family: Cabin, sans-serif;
+  }
+form {
+    background-color: #ffffff;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .crunchimage{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .crunchimage img{
+    background-size: cover;
+    width:200px;
+    height:100px;
+    border-radius: 8%;
+    border: 1px solid #e9e9e9;
+  }
+
+  .form-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .form-row input[type="email"],
+  .form-row input[type="password"],
+  .form-row textarea{
+    flex: 1;
+    margin-left: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    min-width: 400px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+  .form-row label, #specificanime label{
+    font-size: 16px;
+    margin-right: 10px;
+    width: 150px;
+    margin-top: 20px;
+  }
+
+  button[type="submit"] {
+    background-color: #FE6C00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .termswrapper{
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;    
+      }
+      .terms{
+        overflow-y: scroll;
+        height: 100px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 80%;
+        padding: 5px;
+      }
+      .anidetails{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 30px;
+      }
+
+      .anidetails_row{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 10px 0px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: white;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .anidetails_title{
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .anidetails_date{
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .anidetails_position{
+        font-size: 16px;
+      }
+      .anidetails_description{
+        font-size: 14px;
+      }
+
+      .submit_button a{
+        text-decoration: none;
+        color: white;
+        width: 200px;
+        text-align: center;
+        padding: 10px;
+        background-color: white;
+        border: 1px solid #FE6C00;
+        color: #FE6C00;
+        border-radius: 5px;
+        font-size: 12px;
+      }
+      .types{
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        margin-left: 150px;
+      }
+      .searchanime{
+        margin-left: 150px;
+        min-width: 100px;
+      }
+</style>
+<script>
+    function show(shown, hidden) {
+      document.getElementById(shown).style.display = 'block';
+      document.getElementById(hidden).style.display = 'none';
+      return false;
+    }
+</script>
+</head> 
+<body>
+
+<!--Page 1-->
+    <div id = "Page1">
+        <form>
+            <div class = "crunchimage">
+                <image id = "image1" src = "logo1.avif" alt="logo" height="100" width="200">  
+                </image>
+            </div>
+            <div id = "mails" class="form-row">
+                <label for="mail">Email : </label>
+                <input type="email" id="mail" name="email" placeholder="Please enter your email">
+              </div> 
+            <div id="password" class="form-row">
+                <label for="password">Password : </label>
+                <input type="password" id="pass" name="password" placeholder="Please enter your password">
+            </div>
+            <div id="remember" style="margin-left: 180px;">
+                <label for="forgot">Remember Me</label>
+                <input type="checkbox" id="forgot" name="forgot">
+              </div>
+              
+            <div id="anifan" class="form-row">
+                <label for="remember">Are you a Anime Fan?</label>
+                <div>
+                  <span>
+                    <label for="remember">Yes</label>
+                    <input type="radio" id="remember" name="remember">
+                  </span>
+                  <span>
+                    <label for="remember">No</label>
+                    <input type="radio" id="remember" name="remember">
+                  </span>
+                </div>
+              <button id="btn1" type="submit" onclick="return show('Page2','Page1');">Login</button>
+            </div>
+        </form>
+    </div>
+
+
+ <!--Page 2-->
+    <div id="Page2" style="display: none;">
+        <form>
+          <div id="imaged2" class="crunchimage">
+            <image id="image2" src="logo1.avif" alt="logo" height="100" width="200"></image>
+            </div>
+    
+          <div id="specificanime" class="jdsearch_title searchanime">
+            <label for="anime_title">Specific anime</label>
+            <input type="text" id="anime_title" name="anime_title" placeholder="Enter anime title">
+          </div>
+          <div id="animeTypes" class="form-row anime-form types">
+            <div>
+              <input type="radio" id="radio" name="Shounen" value="Shounen">
+              <label for="Shounen">Shounen</label>
+            </div>
+            <div>
+              <input type="radio" id="radio" name="Senin" value="Senin">
+              <label for="Senin">Senin</label>
+            </div>
+            <div>
+              <input type="radio" id="radio" name="Sports" value="Sports">
+              <label for="Sports">Sports</label>
+            </div>
+          </div>
+          
+          <div id="terms" class="termswrapper">
+            <h4>Some Text</h4>
+            <div class="terms">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+            </div>
+            <button id="btn2" type="submit" onclick="return show('Page3','Page2');">Submit</button>
+          </div>
+         
+          </form>
+        </div>
+      
+<!--Page 3-->
+        <div id="Page3" style="display: none;">
+            <div>
+              <form>
+                <div class="submit_button">
+                  <a href="#" onclick="return show('Page1','Page3');">Sign Out</a>
+                </div>
+                <div class="crunchimage">
+                  <image src="logo1.avif" alt="logo"  height="100" width="200"></image>
+                </div>
+                <div class="anidetails_search">
+                  <div class="anidetails_search_title">
+                    <label for="searchanime">Search anime:</label>
+                    <input type="text" id="anime_title" name="anime_title" placeholder="Enter anime title">
+                    <span>
+                      <input type="radio" id="open" name="open">
+                      <label for="remember">New Animes</label>
+                    </span>
+                    <span>
+                      <input type="radio" id="open" name="open">
+                      <label for="remember">All animes</label>
+                    </span>
+                  </div>
+                </div>
+        
+        
+                <div class="anidetails">
+                  <div class="anidetails_row">
+                    <div class="anidetails_checkbox">
+                      <input type="checkbox" id="anime1" name="anime1" value="anime1">
+                      <label for="anime1">like</label>
+                    </div>
+                    <div class="anidetails_title">
+                      One Piece
+                    </div>
+                    <div class="anidetails_date">
+                      Aired Until: Ongoing
+                    </div>
+                    <div class="anidetails_position">
+                     Shounen
+                    </div>
+                    <div class="anidetails_id">
+                      Likes: 99999
+                    </div>
+                    <div class="anidetails_description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos nisi pariatur error.
+                    </div>
+                  </div>
+        
+                  <div class="anidetails_row">
+                    <div class="anidetails_checkbox">
+                      <input type="checkbox" id="anime1" name="anime1" value="anime1">
+                      <label for="anime1">Like</label>
+                    </div>
+                    <div class="anidetails_title">
+                     Bleach
+                    </div>
+                    <div class="anidetails_date">
+                      Aired Until: 11/19/2023
+                    </div>
+                    <div class="anidetails_position">
+                      Shounen
+                    </div>
+                    <div class="anidetails_id">
+                      Likes: 888888
+                    </div>
+                    <div class="anidetails_description">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos nisi pariatur error.
+                    </div>
+                  </div>
+        
+                  <div class="anidetails_row">
+                    <div class="anidetails_checkbox">
+                      <input type="checkbox" id="anime1" name="anime1" value="anime1">
+                      <label for="anime1">Like</label>
+                    </div>
+                    <div class="anidetails_title">
+                      Naruto
+                    </div>
+                    <div class="anidetails_date">
+                      Aired Until: 11/19/2023
+                    </div>
+                    <div class="anidetails_position">
+                      Shounen
+                    </div>
+                    <div class="anidetails_id">
+                      Likes: 777777
+                    </div>
+                    <div class="anidetails_description">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos nisi pariatur error.
+                    </div>
+                  </div>
+                </div>
+                <div class="submit_button" style="margin-left: 200px;">
+                  <button type="submit" onclick="return show('Page1','Page3');">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+              
+</body>
+   
+
+
+</html>
